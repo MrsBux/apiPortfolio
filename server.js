@@ -1,5 +1,5 @@
 const http = require("http");
-const app = require("./app");
+const app = require("./app.js");
 require("dotenv").config();
 
 const normalizePort = (val) => {

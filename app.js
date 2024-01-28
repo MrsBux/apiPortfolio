@@ -64,10 +64,6 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
-
 app.use("/images", express.static("./images"));
 
 app.use("/api/projects", projectsRoutes);
@@ -79,5 +75,9 @@ app.use("/api/formcontact", formcontactRoutes);
 app.use("/api/formtest", formtestRoutes);
 
 app.use("/api/auth", userRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 module.exports = app;

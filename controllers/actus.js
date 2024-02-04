@@ -1,6 +1,6 @@
 const Actu = require("../models/Actu");
 
-//
+//test
 
 exports.createActu = (req, res, next) => {
   delete req.body._id;

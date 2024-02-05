@@ -1,4 +1,3 @@
-const http = require("http");
 const https = require("https");
 const fs = require("fs");
 const app = require("./app.js");
@@ -19,24 +18,40 @@ const normalizePort = (val) => {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-const privateKey = fs.readFileSync("./cert/private.key", "utf8");
-const certificate = fs.readFileSync("./cert/certificate.crt", "utf8");
-const ca = fs.readFileSync("./cert/ca_bundle.crt", "utf8");
+const errorHandler = (error) => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+  const address = server.address();
+  const bind =
+    typeof address === "string" ? "pipe " + address : "port: " + port;
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges.");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use.");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
 
-const credentials = { key: privateKey, cert: certificate, ca: ca };
+const serverOptions = {
+  key: fs.readFileSync("./cert/private.key"),
+  cert: fs.readFileSync("./cert/certificate.crt"),
+  ca: fs.readFileSync("./cert/ca_bundle.crt"),
+};
 
-const httpServer = http.createServer((req, res) => {
-  // Rediriger toutes les demandes HTTP vers HTTPS
-  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
-  res.end();
+const server = https.createServer(serverOptions, app);
+
+server.on("error", errorHandler);
+server.on("listening", () => {
+  const address = server.address();
+  const bind = typeof address === "string" ? "pipe " + address : "port " + port;
+  console.log("Listening on " + bind);
 });
 
-const httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(port, () => {
-  console.log("HTTP Server running on port " + port);
-});
-
-httpsServer.listen(process.env.PORT || 443, () => {
-  console.log("HTTPS Server running on port " + (process.env.PORT || 443));
-});
+server.listen(port);

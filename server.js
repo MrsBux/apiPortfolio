@@ -1,6 +1,4 @@
-const http = require("http");
 const https = require("https");
-const fs = require("fs");
 const app = require("./app.js");
 require("dotenv").config();
 
@@ -15,7 +13,6 @@ const normalizePort = (val) => {
   }
   return false;
 };
-
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
@@ -25,13 +22,34 @@ const ca = fs.readFileSync("./cert/ca_bundle.crt", "utf8");
 
 const credentials = { key: privateKey, cert: certificate, ca: ca };
 
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+const errorHandler = (error) => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+  const address = server.address();
+  const bind =
+    typeof address === "string" ? "pipe " + address : "port: " + port;
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges.");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use.");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
 
-httpServer.listen(process.env.PORT || port, () => {
-  console.log("HTTP Server running on port " + (process.env.PORT || port));
+const server = https.createServer(credentials, app);
+
+server.on("error", errorHandler);
+server.on("listening", () => {
+  const address = server.address();
+  const bind = typeof address === "string" ? "pipe " + address : "port " + port;
+  console.log("Listening on " + bind);
 });
 
-httpsServer.listen(process.env.PORT || 443, "0.0.0.0", () => {
-  console.log("HTTPS Server running on port " + (process.env.PORT || 443));
-});
+server.listen(port);

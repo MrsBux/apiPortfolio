@@ -1,5 +1,6 @@
 const https = require("https");
 const app = require("./app.js");
+const fs = require("fs");
 require("dotenv").config();
 
 const normalizePort = (val) => {

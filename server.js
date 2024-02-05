@@ -1,6 +1,5 @@
-const https = require("https");
+const http = require("http");
 const app = require("./app.js");
-const fs = require("fs");
 require("dotenv").config();
 
 const normalizePort = (val) => {
@@ -16,12 +15,6 @@ const normalizePort = (val) => {
 };
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
-
-const privateKey = fs.readFileSync("./cert/private.key", "utf8");
-const certificate = fs.readFileSync("./cert/certificate.crt", "utf8");
-const ca = fs.readFileSync("./cert/ca_bundle.crt", "utf8");
-
-const credentials = { key: privateKey, cert: certificate, ca: ca };
 
 const errorHandler = (error) => {
   if (error.syscall !== "listen") {
@@ -44,7 +37,7 @@ const errorHandler = (error) => {
   }
 };
 
-const server = https.createServer(credentials, app);
+const server = http.createServer(app);
 
 server.on("error", errorHandler);
 server.on("listening", () => {

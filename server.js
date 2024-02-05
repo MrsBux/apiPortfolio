@@ -25,7 +25,12 @@ const ca = fs.readFileSync("./cert/ca_bundle.crt", "utf8");
 
 const credentials = { key: privateKey, cert: certificate, ca: ca };
 
-const httpServer = http.createServer(app);
+const httpServer = http.createServer((req, res) => {
+  // Rediriger toutes les demandes HTTP vers HTTPS
+  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
+  res.end();
+});
+
 const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(port, () => {

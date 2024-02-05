@@ -7,11 +7,8 @@ exports.createProject = (req, res, next) => {
   console.log("req.body:", req.body);
   console.log("req.files:", req.files);
 
-  // Vérifiez si le protocole est "https", sinon utilisez "http"
-  const protocol = req.protocol === "https" ? "https" : "http";
-
   const coverURL = req.files.coverURL
-    ? `${protocol}://${req.get("host")}/images/${
+    ? `${req.protocol}://${req.get("host")}/images/${
         req.files.coverURL[0].filename
       }`
     : null;
@@ -23,7 +20,7 @@ exports.createProject = (req, res, next) => {
   const images =
     imagesR && Array.isArray(imagesR)
       ? imagesR.map((file) => ({
-          src: `${protocol}://${req.get("host")}/images/${file.filename}`,
+          src: `${req.protocol}://${req.get("host")}/images/${file.filename}`,
           alt: file.originalname,
           caption: file.originalname,
         }))
@@ -37,7 +34,18 @@ exports.createProject = (req, res, next) => {
     images: images,
   });
 
-  // Reste du code...
+  project
+    .save()
+    .then(() => {
+      res.status(201).json({ message: "Projet enregistré !" });
+    })
+    .catch((error) => {
+      console.error(
+        "Erreur lors de l'enregistrement du projet :",
+        error.message
+      );
+      res.status(500).json({ error: "Erreur interne du serveur" });
+    });
 };
 
 // exports.deleteProject = (req, res, next) => {

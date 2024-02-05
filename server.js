@@ -28,8 +28,8 @@ const credentials = { key: privateKey, cert: certificate, ca: ca };
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(port, () => {
-  console.log("HTTP Server running on port " + port);
+httpServer.listen(process.env.PORT || port, () => {
+  console.log("HTTP Server running on port " + (process.env.PORT || port));
 });
 
 httpsServer.listen(process.env.PORT || 443, "0.0.0.0", () => {

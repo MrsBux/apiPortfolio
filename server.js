@@ -1,57 +1,24 @@
+const http = require("http");
 const https = require("https");
 const fs = require("fs");
 const app = require("./app.js");
 require("dotenv").config();
 
-const normalizePort = (val) => {
-  const port = parseInt(val, 10);
+// ...
 
-  if (isNaN(port)) {
-    return val;
-  }
-  if (port >= 0) {
-    return port;
-  }
-  return false;
-};
+const privateKey = fs.readFileSync("./cert/private.key", "utf8");
+const certificate = fs.readFileSync("./cert/certificate.crt", "utf8");
+const ca = fs.readFileSync("./cert/ca_bundle.crt", "utf8");
 
-const port = normalizePort(process.env.PORT || "3000");
-app.set("port", port);
+const credentials = { key: privateKey, cert: certificate, ca: ca };
 
-const errorHandler = (error) => {
-  if (error.syscall !== "listen") {
-    throw error;
-  }
-  const address = server.address();
-  const bind =
-    typeof address === "string" ? "pipe " + address : "port: " + port;
-  switch (error.code) {
-    case "EACCES":
-      console.error(bind + " requires elevated privileges.");
-      process.exit(1);
-      break;
-    case "EADDRINUSE":
-      console.error(bind + " is already in use.");
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-};
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 
-const serverOptions = {
-  key: fs.readFileSync("./cert/private.key"),
-  cert: fs.readFileSync("./cert/certificate.crt"),
-  ca: fs.readFileSync("./cert/ca_bundle.crt"),
-};
-
-const server = https.createServer(serverOptions, app);
-
-server.on("error", errorHandler);
-server.on("listening", () => {
-  const address = server.address();
-  const bind = typeof address === "string" ? "pipe " + address : "port " + port;
-  console.log("Listening on " + bind);
+httpServer.listen(3000, () => {
+  console.log("HTTP Server running on port 3000");
 });
 
-server.listen(port);
+httpsServer.listen(443, () => {
+  console.log("HTTPS Server running on port 443");
+});

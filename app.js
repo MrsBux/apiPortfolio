@@ -76,6 +76,13 @@ app.use("/api/formtest", formtestRoutes);
 
 app.use("/api/auth", userRoutes);
 
+app.use((req, res, next) => {
+  if (!req.secure) {
+    return res.redirect("https://" + req.headers.host + req.url);
+  }
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });

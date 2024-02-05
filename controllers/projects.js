@@ -20,7 +20,7 @@ exports.createProject = (req, res, next) => {
   const images =
     imagesR && Array.isArray(imagesR)
       ? imagesR.map((file) => ({
-          src: `${req.protocol}://${req.get("host")}/images/${file.filename}`,
+          src: `https://${req.get("host")}/images/${file.filename}`,
           alt: file.originalname,
           caption: file.originalname,
         }))

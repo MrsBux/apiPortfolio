@@ -1,4 +1,5 @@
-const http = require("http");
+const https = require("https");
+const fs = require("fs");
 const app = require("./app.js");
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ const normalizePort = (val) => {
   }
   return false;
 };
+
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
@@ -37,7 +39,13 @@ const errorHandler = (error) => {
   }
 };
 
-const server = http.createServer(app);
+const serverOptions = {
+  key: fs.readFileSync("./cert/private.key"),
+  cert: fs.readFileSync("./cert/certificate.crt"),
+  ca: fs.readFileSync("./cert/ca_bundle.crt"),
+};
+
+const server = https.createServer(serverOptions, app);
 
 server.on("error", errorHandler);
 server.on("listening", () => {

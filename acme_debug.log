@@ -1,0 +1,182 @@
+[lun. 05 févr. 2024 08:10:40 CET] Lets find script dir.
+[lun. 05 févr. 2024 08:10:40 CET] _SCRIPT_='/home/camille_sc/.acme.sh/acme.sh'
+[lun. 05 févr. 2024 08:10:40 CET] _script='/home/camille_sc/.acme.sh/acme.sh'
+[lun. 05 févr. 2024 08:10:40 CET] _script_home='/home/camille_sc/.acme.sh'
+[lun. 05 févr. 2024 08:10:40 CET] Using config home:/home/camille_sc/.acme.sh
+[lun. 05 févr. 2024 08:10:40 CET] LE_WORKING_DIR='/home/camille_sc/.acme.sh'
+https://github.com/acmesh-official/acme.sh
+v3.0.8
+[lun. 05 févr. 2024 08:10:40 CET] Running cmd: issue
+[lun. 05 févr. 2024 08:10:40 CET] _main_domain='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _alt_domains='no'
+[lun. 05 févr. 2024 08:10:40 CET] Using config home:/home/camille_sc/.acme.sh
+[lun. 05 févr. 2024 08:10:40 CET] default_acme_server
+[lun. 05 févr. 2024 08:10:40 CET] ACME_DIRECTORY='https://acme.zerossl.com/v2/DV90'
+[lun. 05 févr. 2024 08:10:40 CET] _ACME_SERVER_HOST='acme.zerossl.com'
+[lun. 05 févr. 2024 08:10:40 CET] _ACME_SERVER_PATH='v2/DV90'
+[lun. 05 févr. 2024 08:10:40 CET] DOMAIN_PATH='/home/camille_sc/.acme.sh/www.buxwebcompagnie.com_ecc'
+[lun. 05 févr. 2024 08:10:40 CET] './cert' does not contain 'dns'
+[lun. 05 févr. 2024 08:10:40 CET] Le_NextRenewTime
+[lun. 05 févr. 2024 08:10:40 CET] Using ACME_DIRECTORY: https://acme.zerossl.com/v2/DV90
+[lun. 05 févr. 2024 08:10:40 CET] _init api for server: https://acme.zerossl.com/v2/DV90
+[lun. 05 févr. 2024 08:10:40 CET] GET
+[lun. 05 févr. 2024 08:10:40 CET] url='https://acme.zerossl.com/v2/DV90'
+[lun. 05 févr. 2024 08:10:40 CET] timeout=
+[lun. 05 févr. 2024 08:10:40 CET] _CURL='curl --silent --dump-header /home/camille_sc/.acme.sh/http.header  -L  --trace-ascii /tmp/tmp.z5hAysL4gz  -g '
+[lun. 05 févr. 2024 08:10:40 CET] ret='0'
+[lun. 05 févr. 2024 08:10:40 CET] response='{
+  "newNonce": "https://acme.zerossl.com/v2/DV90/newNonce",
+  "newAccount": "https://acme.zerossl.com/v2/DV90/newAccount",
+  "newOrder": "https://acme.zerossl.com/v2/DV90/newOrder",
+  "revokeCert": "https://acme.zerossl.com/v2/DV90/revokeCert",
+  "keyChange": "https://acme.zerossl.com/v2/DV90/keyChange",
+  "meta": {
+    "termsOfService": "https://secure.trust-provider.com/repository/docs/Legacy/20230516_Certificate_Subscriber_Agreement_v_2_6_click.pdf",
+    "website": "https://zerossl.com",
+    "caaIdentities": ["sectigo.com", "trust-provider.com", "usertrust.com", "comodoca.com", "comodo.com"],
+    "externalAccountRequired": true
+  }
+}'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_KEY_CHANGE='https://acme.zerossl.com/v2/DV90/keyChange'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_NEW_AUTHZ
+[lun. 05 févr. 2024 08:10:40 CET] ACME_NEW_ORDER='https://acme.zerossl.com/v2/DV90/newOrder'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_NEW_ACCOUNT='https://acme.zerossl.com/v2/DV90/newAccount'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_REVOKE_CERT='https://acme.zerossl.com/v2/DV90/revokeCert'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_AGREEMENT='https://secure.trust-provider.com/repository/docs/Legacy/20230516_Certificate_Subscriber_Agreement_v_2_6_click.pdf'
+[lun. 05 févr. 2024 08:10:40 CET] ACME_NEW_NONCE='https://acme.zerossl.com/v2/DV90/newNonce'
+[lun. 05 févr. 2024 08:10:40 CET] Using CA: https://acme.zerossl.com/v2/DV90
+[lun. 05 févr. 2024 08:10:40 CET] _on_before_issue
+[lun. 05 févr. 2024 08:10:40 CET] _chk_main_domain='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _chk_alt_domains
+[lun. 05 févr. 2024 08:10:40 CET] './cert' does not contain 'no'
+[lun. 05 févr. 2024 08:10:40 CET] Le_LocalAddress
+[lun. 05 févr. 2024 08:10:40 CET] d='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] Check for domain='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _currentRoot='./cert'
+[lun. 05 févr. 2024 08:10:40 CET] d
+[lun. 05 févr. 2024 08:10:40 CET] './cert' does not contain 'apache'
+[lun. 05 févr. 2024 08:10:40 CET] _saved_account_key_hash='GxhEktuuN97oNGt/71hnfFcBEcjbUGQ4YNcrmHcxJOw='
+[lun. 05 févr. 2024 08:10:40 CET] _saved_account_key_hash is not changed, skip register account.
+[lun. 05 févr. 2024 08:10:40 CET] Read key length:ec-256
+[lun. 05 févr. 2024 08:10:40 CET] _createcsr
+[lun. 05 févr. 2024 08:10:40 CET] domain='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] domainlist
+[lun. 05 févr. 2024 08:10:40 CET] csrkey='/home/camille_sc/.acme.sh/www.buxwebcompagnie.com_ecc/www.buxwebcompagnie.com.key'
+[lun. 05 févr. 2024 08:10:40 CET] csr='/home/camille_sc/.acme.sh/www.buxwebcompagnie.com_ecc/www.buxwebcompagnie.com.csr'
+[lun. 05 févr. 2024 08:10:40 CET] csrconf='/home/camille_sc/.acme.sh/www.buxwebcompagnie.com_ecc/www.buxwebcompagnie.com.csr.conf'
+[lun. 05 févr. 2024 08:10:40 CET] Single domain='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] seg='www'
+[lun. 05 févr. 2024 08:10:40 CET] _is_idn_d='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _idn_temp
+[lun. 05 févr. 2024 08:10:40 CET] _is_idn_d='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _idn_temp
+[lun. 05 févr. 2024 08:10:40 CET] _csr_cn='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] seg='www'
+[lun. 05 févr. 2024 08:10:40 CET] Getting domain auth token for each domain
+[lun. 05 févr. 2024 08:10:40 CET] seg='www'
+[lun. 05 févr. 2024 08:10:40 CET] _is_idn_d='www.buxwebcompagnie.com'
+[lun. 05 févr. 2024 08:10:40 CET] _idn_temp
+[lun. 05 févr. 2024 08:10:40 CET] d
+[lun. 05 févr. 2024 08:10:40 CET] _identifiers='{"type":"dns","value":"www.buxwebcompagnie.com"}'
+[lun. 05 févr. 2024 08:10:40 CET] _notBefore
+[lun. 05 févr. 2024 08:10:40 CET] _notAfter
+[lun. 05 févr. 2024 08:10:40 CET] STEP 1, Ordering a Certificate
+[lun. 05 févr. 2024 08:10:40 CET] =======Begin Send Signed Request=======
+[lun. 05 févr. 2024 08:10:40 CET] url='https://acme.zerossl.com/v2/DV90/newOrder'
+[lun. 05 févr. 2024 08:10:40 CET] payload='{"identifiers": [{"type":"dns","value":"www.buxwebcompagnie.com"}]}'
+[lun. 05 févr. 2024 08:10:40 CET] EC key
+[lun. 05 févr. 2024 08:10:40 CET] Get nonce with HEAD. ACME_NEW_NONCE='https://acme.zerossl.com/v2/DV90/newNonce'
+[lun. 05 févr. 2024 08:10:40 CET] HEAD
+[lun. 05 févr. 2024 08:10:40 CET] _post_url='https://acme.zerossl.com/v2/DV90/newNonce'
+[lun. 05 févr. 2024 08:10:40 CET] body
+[lun. 05 févr. 2024 08:10:40 CET] _postContentType='application/jose+json'
+[lun. 05 févr. 2024 08:10:40 CET] _CURL='curl --silent --dump-header /home/camille_sc/.acme.sh/http.header  -L  --trace-ascii /tmp/tmp.F26Wk3y3TK  -g  -I  '
+[lun. 05 févr. 2024 08:10:41 CET] _ret='0'
+[lun. 05 févr. 2024 08:10:41 CET] _headers='HTTP/2 200 
+server: nginx
+date: Mon, 05 Feb 2024 07:10:43 GMT
+content-type: application/octet-stream
+replay-nonce: tORfHMFJLQxMnwCTwISOZZuXN6ZvLYT7wt9jSwvKmsc
+cache-control: max-age=0, no-cache, no-store
+access-control-allow-origin: *
+link: <https://acme.zerossl.com/v2/DV90>;rel="index"
+strict-transport-security: max-age=15724800; includeSubDomains
+'
+[lun. 05 févr. 2024 08:10:41 CET] _CACHED_NONCE='tORfHMFJLQxMnwCTwISOZZuXN6ZvLYT7wt9jSwvKmsc'
+[lun. 05 févr. 2024 08:10:41 CET] nonce='tORfHMFJLQxMnwCTwISOZZuXN6ZvLYT7wt9jSwvKmsc'
+[lun. 05 févr. 2024 08:10:41 CET] POST
+[lun. 05 févr. 2024 08:10:41 CET] _post_url='https://acme.zerossl.com/v2/DV90/newOrder'
+[lun. 05 févr. 2024 08:10:41 CET] body='{"protected": "eyJub25jZSI6ICJ0T1JmSE1GSkxReE1ud0NUd0lTT1padVhONlp2TFlUN3d0OWpTd3ZLbXNjIiwgInVybCI6ICJodHRwczovL2FjbWUuemVyb3NzbC5jb20vdjIvRFY5MC9uZXdPcmRlciIsICJhbGciOiAiRVMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS56ZXJvc3NsLmNvbS92Mi9EVjkwL2FjY291bnQvNzlOMm9TTkx2Z040YklxcjJsclFPdyJ9", "payload": "eyJpZGVudGlmaWVycyI6IFt7InR5cGUiOiJkbnMiLCJ2YWx1ZSI6Ind3dy5idXh3ZWJjb21wYWduaWUuY29tIn1dfQ", "signature": "MSfVl46sKlO4RjNgRBUTBZOpLvTFbe3PR95DWl_WOuxh_dStliu2BmT3DG4I9xDIS_ung3QOwHLuezxBjffgzA"}'
+[lun. 05 févr. 2024 08:10:41 CET] _postContentType='application/jose+json'
+[lun. 05 févr. 2024 08:10:41 CET] Http already initialized.
+[lun. 05 févr. 2024 08:10:41 CET] _CURL='curl --silent --dump-header /home/camille_sc/.acme.sh/http.header  -L  --trace-ascii /tmp/tmp.F26Wk3y3TK  -g '
+[lun. 05 févr. 2024 08:10:42 CET] _ret='0'
+[lun. 05 févr. 2024 08:10:42 CET] responseHeaders='HTTP/2 201 
+server: nginx
+date: Mon, 05 Feb 2024 07:10:43 GMT
+content-type: application/json
+content-length: 285
+replay-nonce: ZGMOA_wNLOf-Ay0m0yRAoNFZ-vgtKYAMubfMsyKaeoI
+cache-control: max-age=0, no-cache, no-store
+access-control-allow-origin: *
+location: https://acme.zerossl.com/v2/DV90/order/L8MsX6WKJv8USL10mAbq1Q
+strict-transport-security: max-age=15724800; includeSubDomains
+'
+[lun. 05 févr. 2024 08:10:42 CET] code='201'
+[lun. 05 févr. 2024 08:10:42 CET] original='{"status":"pending","expires":"2024-05-05T07:00:47Z","identifiers":[{"type":"dns","value":"www.buxwebcompagnie.com"}],"authorizations":["https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q"],"finalize":"https://acme.zerossl.com/v2/DV90/order/L8MsX6WKJv8USL10mAbq1Q/finalize"}'
+[lun. 05 févr. 2024 08:10:42 CET] response='{"status":"pending","expires":"2024-05-05T07:00:47Z","identifiers":[{"type":"dns","value":"www.buxwebcompagnie.com"}],"authorizations":["https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q"],"finalize":"https://acme.zerossl.com/v2/DV90/order/L8MsX6WKJv8USL10mAbq1Q/finalize"}'
+[lun. 05 févr. 2024 08:10:42 CET] Le_LinkOrder='https://acme.zerossl.com/v2/DV90/order/L8MsX6WKJv8USL10mAbq1Q'
+[lun. 05 févr. 2024 08:10:42 CET] Le_OrderFinalize='https://acme.zerossl.com/v2/DV90/order/L8MsX6WKJv8USL10mAbq1Q/finalize'
+[lun. 05 févr. 2024 08:10:42 CET] _authorizations_seg='https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q'
+[lun. 05 févr. 2024 08:10:42 CET] STEP 2, Get the authorizations of each domain
+[lun. 05 févr. 2024 08:10:42 CET] _authz_url='https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q'
+[lun. 05 févr. 2024 08:10:42 CET] =======Begin Send Signed Request=======
+[lun. 05 févr. 2024 08:10:42 CET] url='https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q'
+[lun. 05 févr. 2024 08:10:42 CET] payload
+[lun. 05 févr. 2024 08:10:42 CET] Use cached jwk for file: /home/camille_sc/.acme.sh/ca/acme.zerossl.com/v2/DV90/account.key
+[lun. 05 févr. 2024 08:10:42 CET] Use _CACHED_NONCE='ZGMOA_wNLOf-Ay0m0yRAoNFZ-vgtKYAMubfMsyKaeoI'
+[lun. 05 févr. 2024 08:10:42 CET] nonce='ZGMOA_wNLOf-Ay0m0yRAoNFZ-vgtKYAMubfMsyKaeoI'
+[lun. 05 févr. 2024 08:10:42 CET] POST
+[lun. 05 févr. 2024 08:10:42 CET] _post_url='https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q'
+[lun. 05 févr. 2024 08:10:42 CET] body='{"protected": "eyJub25jZSI6ICJaR01PQV93TkxPZi1BeTBtMHlSQW9ORlotdmd0S1lBTXViZk1zeUthZW9JIiwgInVybCI6ICJodHRwczovL2FjbWUuemVyb3NzbC5jb20vdjIvRFY5MC9hdXRoei9Gc3R0VDBjWExmMVVQOGV0ZFZHdzBRIiwgImFsZyI6ICJFUzI1NiIsICJraWQiOiAiaHR0cHM6Ly9hY21lLnplcm9zc2wuY29tL3YyL0RWOTAvYWNjb3VudC83OU4yb1NOTHZnTjRiSXFyMmxyUU93In0", "payload": "", "signature": "7pn1Z0Vvp945blr1qIlzsN9C6qtC0tNF_qrCmspCbIbbKw6DG3sVUwdtaOqFtgnSsUCq3K_qWkEiexRvS5uXow"}'
+[lun. 05 févr. 2024 08:10:42 CET] _postContentType='application/jose+json'
+[lun. 05 févr. 2024 08:10:42 CET] Http already initialized.
+[lun. 05 févr. 2024 08:10:42 CET] _CURL='curl --silent --dump-header /home/camille_sc/.acme.sh/http.header  -L  --trace-ascii /tmp/tmp.F26Wk3y3TK  -g '
+[lun. 05 févr. 2024 08:10:43 CET] _ret='0'
+[lun. 05 févr. 2024 08:10:43 CET] responseHeaders='HTTP/2 200 
+server: nginx
+date: Mon, 05 Feb 2024 07:10:45 GMT
+content-type: application/json
+content-length: 303
+replay-nonce: G8vFYVuNsra5qeppNN2_difnekXD-Ux3Lx9FCu0y-Y0
+cache-control: max-age=0, no-cache, no-store
+access-control-allow-origin: *
+link: <https://acme.zerossl.com/v2/DV90>;rel="index"
+retry-after: 86400
+strict-transport-security: max-age=15724800; includeSubDomains
+'
+[lun. 05 févr. 2024 08:10:43 CET] code='200'
+[lun. 05 févr. 2024 08:10:43 CET] original='{"identifier":{"type":"dns","value":"www.buxwebcompagnie.com"},"status":"invalid","expires":"2024-03-06T07:00:47Z","challenges":[{"type":"http-01","url":"https://acme.zerossl.com/v2/DV90/chall/bvY2c5gACdbvNRiU1hVEnA","status":"invalid","error":{},"token":"NdJiAPE_U1RORYBoNBtec6sebosMMjnRD_gDnVvxUYc"}]}'
+[lun. 05 févr. 2024 08:10:43 CET] response='{"identifier":{"type":"dns","value":"www.buxwebcompagnie.com"},"status":"invalid","expires":"2024-03-06T07:00:47Z","challenges":[{"type":"http-01","url":"https://acme.zerossl.com/v2/DV90/chall/bvY2c5gACdbvNRiU1hVEnA","status":"invalid","error":{},"token":"NdJiAPE_U1RORYBoNBtec6sebosMMjnRD_gDnVvxUYc"}]}'
+[lun. 05 févr. 2024 08:10:43 CET] response='{"identifier":{"type":"dns","value":"www.buxwebcompagnie.com"},"status":"invalid","expires":"2024-03-06T07:00:47Z","challenges":[{"type":"http-01","url":"https://acme.zerossl.com/v2/DV90/chall/bvY2c5gACdbvNRiU1hVEnA","status":"invalid","error":{},"token":"NdJiAPE_U1RORYBoNBtec6sebosMMjnRD_gDnVvxUYc"}]}'
+[lun. 05 févr. 2024 08:10:43 CET] get authz objec with invalid status, please try again later.
+[lun. 05 févr. 2024 08:10:43 CET] _authorizations_seg='https://acme.zerossl.com/v2/DV90/authz/FsttT0cXLf1UP8etdVGw0Q'
+[lun. 05 févr. 2024 08:10:43 CET] {"identifier":{"type":"dns","value":"www.buxwebcompagnie.com"},"status":"invalid","expires":"2024-03-06T07:00:47Z","challenges":[{"type":"http-01","url":"https://acme.zerossl.com/v2/DV90/chall/bvY2c5gACdbvNRiU1hVEnA","status":"invalid","error":{},"token":"NdJiAPE_U1RORYBoNBtec6sebosMMjnRD_gDnVvxUYc"}]}
+[lun. 05 févr. 2024 08:10:43 CET] pid
+[lun. 05 févr. 2024 08:10:43 CET] No need to restore nginx, skip.
+[lun. 05 févr. 2024 08:10:43 CET] _clearupdns
+[lun. 05 févr. 2024 08:10:43 CET] dns_entries
+[lun. 05 févr. 2024 08:10:43 CET] skip dns.
+[lun. 05 févr. 2024 08:10:43 CET] _on_issue_err
+[lun. 05 févr. 2024 08:10:43 CET] Please add '--debug' or '--log' to check more details.
+[lun. 05 févr. 2024 08:10:43 CET] See: https://github.com/acmesh-official/acme.sh/wiki/How-to-debug-acme.sh
+[lun. 05 févr. 2024 08:10:43 CET] _chk_vlist
+[lun. 05 févr. 2024 08:10:44 CET] socat doesn't exist.
+[lun. 05 févr. 2024 08:10:44 CET] Diagnosis versions: 
+openssl:openssl
+OpenSSL 1.1.1f  31 Mar 2020
+apache:
+apache doesn't exist.
+nginx:
+nginx doesn't exist.
+socat:

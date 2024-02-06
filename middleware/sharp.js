@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     const filename =
       req.file.filename.split(".")[0] + "_" + Date.now() + ".webp";
 
-    // Utilisation de Sharp pour redimensionner et convertir l'image en format WebP
+    // Utilisation de Sharp pour redimensionner et convertir l'image en format WebP!
     sharp(req.file.path)
       .resize(600) // Redimensionnage de l'image à une largeur de 600 pixels
       .toFormat("webp", { quality: 80 }) // Conversion de l'image en format WebP

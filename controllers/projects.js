@@ -8,9 +8,7 @@ exports.createProject = (req, res, next) => {
   console.log("req.files:", req.files);
 
   const coverURL = req.files.coverURL
-    ? `${req.protocol}://${req.get("host")}/images/${
-        req.files.coverURL[0].filename
-      }`
+    ? `https://${req.get("host")}/images/${req.files.coverURL[0].filename}`
     : null;
 
   console.log("cover", coverURL);
